@@ -20,24 +20,13 @@ The pipeline expects the following file to exist:
 This dataset contains weekly Google Trends series (keywords) and market variables, and is used to build sentiment features.
 
 
-## How to run the project on Nuvolos
+## How to run the project
 
-This project was developed and tested on **Nuvolos**, which already provides
-a working Python environment.
-
-### 1. Install dependencies
 From the project root directory:
 
 ```bash
-pip install -r requirements.txt
-python main.py
-
-### Optional: Conda environment
-
-An optional `environment.yml` file is provided for full reproducibility.
-It can be used to recreate the environment with:
-
-```bash
+git clone https://github.com/Flavio-unil/Final-Project-DSAP.git
+cd Final-Project-DSAP
 conda env create -f environment.yml
-conda activate <env_name>
+conda activate dsap-capstone
 python main.py
