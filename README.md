@@ -42,7 +42,6 @@ This is a regression task. Model performance is evaluated using:
 
 Classification accuracy is not used, as the target variable is continuous.
 
-
 ## How to run the project
 
 From the project root directory:
