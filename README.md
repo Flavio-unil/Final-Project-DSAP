@@ -1,7 +1,9 @@
 # Final Project DSAP — Can Economic Sentiment Predict Market Movements?
 
-This project studies whether Google search interest for economic-related keywords can help predict next week's S&P 500 return.
+## Research Question
 
+Can economic sentiment extracted from Google Trends help predict next week's S&P 500 return?
+This project studies whether Google search interest for economic-related keywords can help predict next week's S&P 500 return.
 We build sentiment indices from Google Trends weekly search intensity and evaluate simple predictive models using an out-of-sample split.
 
 ## Project structure
@@ -18,6 +20,27 @@ The pipeline expects the following file to exist:
 - `datasets/clean_data/merged_weekly.csv`
 
 This dataset contains weekly Google Trends series (keywords) and market variables, and is used to build sentiment features.
+
+## Methodology
+
+1. Collect weekly Google Trends data for economic-related keywords.
+2. Construct sentiment indices:
+   - Simple index (positive − negative keywords)
+   - Correlation-weighted index
+   - PCA-based sentiment index
+3. Define the target variable as next week's S&P 500 return.
+4. Train models on 2015–2018 data and evaluate out-of-sample on 2019–2020.
+5. Compare predictive performance using RMSE, MAE and R².
+
+## Evaluation Metrics
+
+This is a regression task. Model performance is evaluated using:
+
+- RMSE (Root Mean Squared Error)
+- MAE (Mean Absolute Error)
+- R² (Out-of-sample)
+
+Classification accuracy is not used, as the target variable is continuous.
 
 
 ## How to run the project
