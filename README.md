@@ -72,6 +72,8 @@ Classification accuracy is not used, as the target variable is continuous.
 
 ## How to run the project
 
+This project relies on a dedicated Conda environment to ensure full reproducibility across different machines and operating systems. Before running the code, please make sure that Conda (e.g., via Miniforge or Anaconda) is installed on your system.
+
 ```bash
 git clone https://github.com/Flavio-unil/Final-Project-DSAP.git
 cd Final-Project-DSAP
