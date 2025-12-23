@@ -83,14 +83,4 @@ conda env create -f environment.yml
 conda activate dsap-capstone
 python main.py
 
-### Viewing outputs and figures (optional)
-
-Running `python main.py` prints model performance metrics directly in the terminal and saves numerical results to the `outputs/` directory (e.g., `model_results.csv`).
-
-Some figures (such as predicted vs. actual returns) may either be displayed interactively or saved to disk, depending on the execution environment. If figures are saved, they can be found in the `figures/` directory.
-
-To generate and inspect figures interactively, you can also run the exploratory analysis notebook:
-
-```bash
-jupyter notebook
 
