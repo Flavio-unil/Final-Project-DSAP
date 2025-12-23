@@ -20,6 +20,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 
 import statsmodels.api as sm
+import matplotlib.pyplot as plt
 
 # Configuration
 DATA_PATH = "datasets/clean_data/merged_weekly.csv"
@@ -176,5 +177,28 @@ results_df.to_csv(results_path, index=False)
 print("\nModel comparison (out-of-sample):")
 print(results_df)
 print(f"\nResults saved to {results_path}")
+
+# Plot 1: Time series (Actual vs Predicted - Lasso)
+
+plt.figure()
+plt.plot(y_test.values, label="Actual")
+plt.plot(predictions["Lasso"], label="Predicted (Lasso)")
+plt.title("Out-of-sample: Actual vs Predicted Returns")
+plt.xlabel("Test observations")
+plt.ylabel("Next-week return")
+plt.legend()
+plt.tight_layout()
+plt.show()
+
+# Plot 2: Scatter (Predicted vs Actual - Lasso)
+
+
+plt.figure()
+plt.scatter(y_test.values, predictions["Lasso"], alpha=0.7)
+plt.xlabel("Actual returns")
+plt.ylabel("Predicted returns")
+plt.title("Predicted vs Actual Returns (Lasso)")
+plt.tight_layout()
+plt.show()
 
 print("\nPipeline completed successfully.")
