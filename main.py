@@ -13,6 +13,10 @@ import os
 import numpy as np
 import pandas as pd
 
+import matplotlib
+matplotlib.use("TkAgg")
+import matplotlib.pyplot as plt
+
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import RidgeCV, LassoCV
@@ -20,7 +24,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 
 import statsmodels.api as sm
-import matplotlib.pyplot as plt
+
 
 # Configuration
 DATA_PATH = "datasets/clean_data/merged_weekly.csv"
@@ -188,7 +192,8 @@ plt.xlabel("Test observations")
 plt.ylabel("Next-week return")
 plt.legend()
 plt.tight_layout()
-plt.show()
+plt.show(block=True)
+
 
 # Plot 2: Scatter (Predicted vs Actual - Lasso)
 
@@ -199,6 +204,7 @@ plt.xlabel("Actual returns")
 plt.ylabel("Predicted returns")
 plt.title("Predicted vs Actual Returns (Lasso)")
 plt.tight_layout()
-plt.show()
+plt.show(block=True)
+
 
 print("\nPipeline completed successfully.")
