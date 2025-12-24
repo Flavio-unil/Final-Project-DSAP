@@ -27,9 +27,7 @@ Final Project DSAP/
 │
 │── environment.yml
 │
-├── Flavio_DSAP_Project.pdf
-│
-│──Proposal.md
+│── main.py
 │
 ├── README.md
 
