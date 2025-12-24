@@ -23,6 +23,8 @@ Final Project DSAP/
 │
 ├── outputs/
 │
+│── AI_USAGE.md
+│
 │── environment.yml
 │
 ├── Flavio_DSAP_Project.pdf
