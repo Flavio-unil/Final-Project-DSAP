@@ -81,6 +81,4 @@ git clone https://github.com/Flavio-unil/Final-Project-DSAP.git
 cd Final-Project-DSAP
 conda env create -f environment.yml
 conda activate dsap-capstone
-python main.py
-
-
+MPLBACKEND=Agg python main.py
