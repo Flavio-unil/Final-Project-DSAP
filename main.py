@@ -1,20 +1,10 @@
-"""
-Main entry point for the project:
-Can Economic Sentiment Predict Market Movements?
-
-This script reproduces the full pipeline using the final processed dataset
-and runs the out-of-sample ML evaluation.
-
-Run from project root with:
-    python main.py
-"""
 
 import os
 import numpy as np
 import pandas as pd
 
 import matplotlib
-matplotlib.use("TkAgg")
+matplotlib.use("Agg")  
 import matplotlib.pyplot as plt
 
 from sklearn.pipeline import Pipeline
@@ -30,9 +20,9 @@ import statsmodels.api as sm
 DATA_PATH = "datasets/clean_data/merged_weekly.csv"
 OUTPUT_DIR = "outputs"
 SPLIT_DATE = "2019-01-01"
-# -----------------------------
+
 # Sentiment keyword lists
-# -----------------------------
+
 
 NEGATIVE_WORDS = [
     "recession",
@@ -192,11 +182,15 @@ plt.xlabel("Test observations")
 plt.ylabel("Next-week return")
 plt.legend()
 plt.tight_layout()
-plt.show(block=True)
+
+plot1_path = os.path.join(OUTPUT_DIR, "plot_actual_vs_pred_lasso.png")
+plt.savefig(plot1_path, dpi=200)
+plt.close()
+print(f"Saved plot to {plot1_path}")
+
 
 
 # Plot 2: Scatter (Predicted vs Actual - Lasso)
-
 
 plt.figure()
 plt.scatter(y_test.values, predictions["Lasso"], alpha=0.7)
@@ -204,7 +198,8 @@ plt.xlabel("Actual returns")
 plt.ylabel("Predicted returns")
 plt.title("Predicted vs Actual Returns (Lasso)")
 plt.tight_layout()
-plt.show(block=True)
 
-
-print("\nPipeline completed successfully.")
+plot2_path = os.path.join(OUTPUT_DIR, "plot_scatter_pred_vs_actual_lasso.png")
+plt.savefig(plot2_path, dpi=200)
+plt.close()
+print(f"Saved plot to {plot2_path}")
