@@ -2,23 +2,13 @@ name: dsap-capstone
 channels:
   - conda-forge
 dependencies:
-  - python=3.10
-  - pip
-
-  # Core data science
+  - python=3.11
   - numpy
   - pandas
   - matplotlib
   - scikit-learn
   - statsmodels
-
-  # Data sources
-  - yfinance
-
-  # Utilities
-  - requests
-  - beautifulsoup4
-
-  # Google Trends (via pip)
+  - pip
   - pip:
+      - yfinance
       - pytrends
